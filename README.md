@@ -8,7 +8,7 @@ The acquisition and analysis of power traces is very important. By analyzing the
 The project contains two parts: training the power trace prediction model and making predictions. The training part is achieved using python and ran on laptop. Since it is not the focus of this project, we are not going to describe the details. 
 The prediction part is realized on the TI LaunchPad CC26X2R1. Basically, this part consists of data preprocessing, prediction on neural network and data transmissions. The data model of the prediction on CC26X2R1 is shown in the figure below. The data flow can be described as follows:
 
-![Model](https://github.com/Enihsuns/Power-traces-analysis-on-CC2642R1/img/model.png)
+![Model](https://github.com/Enihsuns/Power-traces-analysis-on-CC2642R1/blob/master/img/model.png)
 
 1. Input. The input only contains a float. It represents in the power value in a second. Since I’m not using the embedded device for real power sensing, here I simply use the Universal Asynchronous Receiver/Transmitter driver to simulate the process of reading data from a power sensor.
 2. Save the input into a value buffer. The value buffer saves power values from the last 60 seconds. Therefore, its size is as large as 60 floats. The buffer is following the rule similar to a queue. When a new value comes in, the oldest value will be pop out.
