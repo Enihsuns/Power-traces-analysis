@@ -6,6 +6,7 @@ The acquisition and analysis of power traces is very important. By analyzing the
 
 ## A description of the project
 The project contains two parts: training the power trace prediction model and making predictions. The training part is achieved using python and ran on laptop. Since it is not the focus of this project, we are not going to describe the details. 
+
 The prediction part is realized on the TI LaunchPad CC26X2R1. Basically, this part consists of data preprocessing, prediction on neural network and data transmissions. The data model of the prediction on CC26X2R1 is shown in the figure below. The data flow can be described as follows:
 
 ![Model](https://github.com/Enihsuns/Power-traces-analysis-on-CC2642R1/blob/master/img/model.png)
@@ -21,11 +22,15 @@ The prediction part is realized on the TI LaunchPad CC26X2R1. Basically, this pa
 
 ##	What hardware and software platforms you used?
 Hardware: TI LaunchPad kit with SimpleLink Wireless MCU LAUNCHXL-CC26X2R1
+
 Software: Code Composer Studio (CCS) from Texas Instruments.
 
 ##	How the software platform / OS helped or didn’t help with creating the project
-Helpful:
+**Helpful:**
+
 CCS provides many useful features for debugging the program and monitoring the status. For example, when loading the Neural Network model through a file I/O operation, I use the memory browser to check whether the weights and bias matrices are successfully assigned.
 Another useful feature is that CCS provides a file named CC26X2R1_LAUNCHXL.cmd, which enables users to set stack size, heap size, and some other parameters. I use it to set the heap size of 62KB so that it is enough to save my Neural Network model.
-Not very helpful:
+
+**Not very helpful:**
+
 In this project, I used the Universal Asynchronous Receiver/Transmitter driver provided in the CC26X2R1 SDK to simulate the process of receiving data from sensors and sending classification results. At the same time, I use some standard I/O operations in C (like printf and puts) for debugging. However, in the setting of CCS debugger, the standard I/O operations use the same UART driver to send data. Therefore, I cannot use standard I/O functions and the UART driver at the same time. This makes the debugging process very inconvenient.
