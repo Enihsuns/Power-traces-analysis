@@ -15,8 +15,10 @@ ORDERED_OBJS += \
 "./CC26X2R1_LAUNCHXL.obj" \
 "./CC26X2R1_LAUNCHXL_fxns.obj" \
 "./ccfg.obj" \
-"./empty.obj" \
+"./dnn_model.obj" \
 "./main_tirtos.obj" \
+"./uart_package.obj" \
+"./uartecho.obj" \
 "../CC26X2R1_LAUNCHXL_TIRTOS.cmd" \
 -l"ti/display/lib/display.aem4f" \
 -l"ti/grlib/lib/ccs/m4f/grlib.a" \
@@ -133,45 +135,45 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-Power_trace_classification_CC26X2R1.out \
+Power_trace_CC26X2R1.out \
 
 EXE_OUTPUTS__QUOTED += \
-"Power_trace_classification_CC26X2R1.out" \
+"Power_trace_CC26X2R1.out" \
 
 BIN_OUTPUTS += \
-Power_trace_classification_CC26X2R1.hex \
+Power_trace_CC26X2R1.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"Power_trace_classification_CC26X2R1.hex" \
+"Power_trace_CC26X2R1.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "Power_trace_classification_CC26X2R1.out"
+	@$(MAKE) --no-print-directory -Onone "Power_trace_CC26X2R1.out"
 
 dependents:
-	-cd D:/Users/71702/workspace_v8/tirtos_builds_CC26X2R1_LAUNCHXL_release_ccs/Debug && $(MAKE) clean all
+	-cd D:/Users/71702/workspace_v8/tirtos_builds_CC26X2R1_LAUNCHXL_release_ccs/Debug && $(MAKE) all
 
 # Tool invocations
-Power_trace_classification_CC26X2R1.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) D:/Users/71702/workspace_v8/tirtos_builds_CC26X2R1_LAUNCHXL_release_ccs/Debug/tirtos_builds_CC26X2R1_LAUNCHXL_release_ccs.lib
+Power_trace_CC26X2R1.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) D:/Users/71702/workspace_v8/tirtos_builds_CC26X2R1_LAUNCHXL_release_ccs/Debug/tirtos_builds_CC26X2R1_LAUNCHXL_release_ccs.lib
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"D:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=DeviceFamily_CC26X2 -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"Power_trace_classification_CC26X2R1.map" -i"D:/ti/simplelink_cc26x2_sdk_2_30_00_34/source" -i"D:/ti/simplelink_cc26x2_sdk_2_30_00_34/kernel/tirtos/packages" -i"D:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Power_trace_classification_CC26X2R1_linkInfo.xml" --rom_model -o "Power_trace_classification_CC26X2R1.out" $(ORDERED_OBJS)
+	"D:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=DeviceFamily_CC26X2 -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"Power_trace_CC26X2R1.map" --heap_size=4096 -i"D:/ti/simplelink_cc26x2_sdk_2_30_00_34/source" -i"D:/ti/simplelink_cc26x2_sdk_2_30_00_34/kernel/tirtos/packages" -i"D:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Power_trace_CC26X2R1_linkInfo.xml" --rom_model -o "Power_trace_CC26X2R1.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-Power_trace_classification_CC26X2R1.hex: $(EXE_OUTPUTS)
+Power_trace_CC26X2R1.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: ARM Hex Utility'
-	"D:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/bin/armhex"  -o "Power_trace_classification_CC26X2R1.hex" $(EXE_OUTPUTS__QUOTED)
+	"D:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/bin/armhex"  -o "Power_trace_CC26X2R1.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "CC26X2R1_LAUNCHXL.obj" "CC26X2R1_LAUNCHXL_fxns.obj" "ccfg.obj" "empty.obj" "main_tirtos.obj" 
-	-$(RM) "CC26X2R1_LAUNCHXL.d" "CC26X2R1_LAUNCHXL_fxns.d" "ccfg.d" "empty.d" "main_tirtos.d" 
+	-$(RM) "CC26X2R1_LAUNCHXL.obj" "CC26X2R1_LAUNCHXL_fxns.obj" "ccfg.obj" "dnn_model.obj" "main_tirtos.obj" "uart_package.obj" "uartecho.obj" 
+	-$(RM) "CC26X2R1_LAUNCHXL.d" "CC26X2R1_LAUNCHXL_fxns.d" "ccfg.d" "dnn_model.d" "main_tirtos.d" "uart_package.d" "uartecho.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

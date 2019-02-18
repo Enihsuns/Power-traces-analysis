@@ -12,7 +12,8 @@
 	<createSlaveProjects value=""/>
 	<ignoreDefaultDeviceSettings value="true"/>
 	<ignoreDefaultCCSSettings value="true"/>
-	<templateProperties value="id=empty_CC26X2R1_LAUNCHXL_tirtos_ccs.projectspec.empty_CC26X2R1_LAUNCHXL_tirtos_ccs,buildProfile=release,isHybrid=true"/>
-	<origin value="D:\ti\simplelink_cc26x2_sdk_2_30_00_34\examples\rtos\CC26X2R1_LAUNCHXL\drivers\empty\tirtos\ccs\empty_CC26X2R1_LAUNCHXL_tirtos_ccs.projectspec"/>
+	<templateProperties value="id=uartecho_CC26X2R1_LAUNCHXL_tirtos_ccs.projectspec.uartecho_CC26X2R1_LAUNCHXL_tirtos_ccs,buildProfile=release,isHybrid=true"/>
+	<origin value="D:\ti\simplelink_cc26x2_sdk_2_30_00_34\examples\rtos\CC26X2R1_LAUNCHXL\drivers\uartecho\tirtos\ccs\uartecho_CC26X2R1_LAUNCHXL_tirtos_ccs.projectspec"/>
 	<filesToOpen value=""/>
+	<isTargetManual value="false"/>
 </projectOptions>

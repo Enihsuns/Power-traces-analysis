@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Power_trace_classification_CC26X2R1</name>
+	<name>Power_trace_CC26X2R1</name>
 	<comment></comment>
 	<projects>
 		<project>tirtos_builds_CC26X2R1_LAUNCHXL_release_ccs</project>
